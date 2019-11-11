@@ -14,7 +14,7 @@ class TodosTest < ApplicationSystemTestCase
     visit todos_url
     click_on "New Todo"
 
-    fill_in "Meta", with: @todo.meta
+    fill_in "Item", with: @todo.item
     click_on "Create Todo"
 
     assert_text "Todo was successfully created"
@@ -25,7 +25,7 @@ class TodosTest < ApplicationSystemTestCase
     visit todos_url
     click_on "Edit", match: :first
 
-    fill_in "Meta", with: @todo.meta
+    fill_in "Item", with: @todo.item
     click_on "Update Todo"
 
     assert_text "Todo was successfully updated"

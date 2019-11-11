@@ -17,7 +17,7 @@ class TodosControllerTest < ActionDispatch::IntegrationTest
 
   test "should create todo" do
     assert_difference('Todo.count') do
-      post todos_url, params: { todo: { meta: @todo.meta } }
+      post todos_url, params: { todo: { item: @todo.item } }
     end
 
     assert_redirected_to todo_url(Todo.last)
@@ -34,7 +34,7 @@ class TodosControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update todo" do
-    patch todo_url(@todo), params: { todo: { meta: @todo.meta } }
+    patch todo_url(@todo), params: { todo: { item: @todo.item } }
     assert_redirected_to todo_url(@todo)
   end
 
